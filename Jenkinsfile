@@ -16,7 +16,7 @@ pipeline {
         stage('Test') {
           steps {
             sh 'echo "Testing.."'
-            sh 'sleep 10'
+            sh 'sss'
           }
         }
         stage('Test UI') {
