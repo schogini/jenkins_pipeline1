@@ -6,9 +6,20 @@ pipeline {
         sh 'echo "Building..."'
       }
     }
-    stage('Test') {
-      steps {
-        sh 'echo "Testing.."'
+    stage('Test FE') {
+      parallel {
+        stage('Test') {
+          steps {
+            sh 'echo "Testing.."'
+            sh 'sleep 10'
+          }
+        }
+        stage('Test UI') {
+          steps {
+            sh 'echo "Test2"'
+            sh 'sleep 20'
+          }
+        }
       }
     }
     stage('Deploy') {
